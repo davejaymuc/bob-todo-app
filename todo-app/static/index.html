@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Todo App</h1>
+        <p class="subtitle">Stay organised, get things done</p>
+      </header>
+
+      <main>
+        <!-- Add todo form -->
+        <form id="add-form" class="add-form" novalidate>
+          <input
+            id="todo-input"
+            type="text"
+            class="todo-input"
+            placeholder="What needs to be done?"
+            maxlength="200"
+            autocomplete="off"
+            aria-label="New todo title"
+          />
+          <button type="submit" class="btn btn-primary" aria-label="Add todo">
+            Add
+          </button>
+        </form>
+
+        <!-- Filter bar -->
+        <div class="filter-bar" role="group" aria-label="Filter todos">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!-- Status / error banner -->
+        <div id="status-banner" class="status-banner" role="alert" aria-live="polite" hidden></div>
+
+        <!-- Todo list -->
+        <ul id="todo-list" class="todo-list" aria-label="Todo items"></ul>
+
+        <!-- Empty state -->
+        <p id="empty-state" class="empty-state" hidden>No todos here yet!</p>
+
+        <!-- Footer counts -->
+        <footer id="list-footer" class="list-footer" hidden>
+          <span id="remaining-count" class="remaining"></span>
+          <button id="clear-completed" class="btn btn-ghost btn-sm">
+            Clear completed
+          </button>
+        </footer>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

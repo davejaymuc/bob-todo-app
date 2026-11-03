@@ -1,0 +1,294 @@
+/* ── Reset & base ──────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #1f2328;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+/* ── Layout ────────────────────────────────────────────────────────────────── */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+/* ── Header ────────────────────────────────────────────────────────────────── */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #1f2328;
+}
+
+.subtitle {
+  color: #57606a;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Card wrapper ──────────────────────────────────────────────────────────── */
+main {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ── Add form ──────────────────────────────────────────────────────────────── */
+.add-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.6rem 0.875rem;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1f2328;
+  background: #f7f8fa;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.todo-input::placeholder {
+  color: #8c959f;
+}
+
+.todo-input:focus {
+  border-color: #3b82d4;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 212, 0.15);
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.btn-primary {
+  background: #3b82d4;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #2d6fbf;
+}
+
+.btn-primary:active {
+  background: #255fa8;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #57606a;
+  border: 1px solid #d0d7de;
+}
+
+.btn-ghost:hover {
+  background: #f7f8fa;
+  color: #1f2328;
+}
+
+.btn-sm {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #57606a;
+  font-size: 1rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-icon:hover {
+  background: #f0f2f5;
+}
+
+.btn-icon.complete:hover {
+  color: #22c55e;
+  background: #f0fdf4;
+}
+
+.btn-icon.delete:hover {
+  color: #ef4444;
+  background: #fef2f2;
+}
+
+/* ── Filter bar ────────────────────────────────────────────────────────────── */
+.filter-bar {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.filter-btn {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 0.83rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  color: #57606a;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.filter-btn:hover {
+  background: #f0f2f5;
+  color: #1f2328;
+}
+
+.filter-btn.active {
+  background: #eff6ff;
+  color: #3b82d4;
+  border-color: #bfdbfe;
+  font-weight: 600;
+}
+
+/* ── Status banner ─────────────────────────────────────────────────────────── */
+.status-banner {
+  margin: 0.75rem 1rem 0;
+  padding: 0.6rem 0.875rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.status-banner.info {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+/* ── Todo list ─────────────────────────────────────────────────────────────── */
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.1s;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item:hover {
+  background: #fafbfc;
+}
+
+.todo-item.completed .todo-title {
+  text-decoration: line-through;
+  color: #8c959f;
+}
+
+.todo-title {
+  flex: 1;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.todo-item.completed .btn-icon.complete {
+  color: #22c55e;
+}
+
+/* ── Empty state ───────────────────────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  color: #8c959f;
+  padding: 2.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* ── List footer ───────────────────────────────────────────────────────────── */
+.list-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 1rem;
+  border-top: 1px solid #e5e7eb;
+  background: #f7f8fa;
+}
+
+.remaining {
+  font-size: 0.82rem;
+  color: #57606a;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem 0.75rem 3rem;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .add-form {
+    flex-direction: column;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .list-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
